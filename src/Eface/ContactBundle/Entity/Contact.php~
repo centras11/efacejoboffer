@@ -1,0 +1,62 @@
+<?php
+
+namespace Eface\ContactBundle\Entity;
+
+use Doctrine\ORM\Mapping as ORM;
+
+
+/**
+ * @ORM\Entity()
+ * @ORM\Table(name="eface_contact")
+ * @ORM\Entity(repositoryClass="Eface\ContactBundle\Entity\Repository\ContactRepository")
+ * @ORM\HasLifecycleCallbacks()
+ */
+class Contact
+{
+    
+ 
+    /**
+     * @var int|null
+     * @ORM\Id()
+     * @ORM\GeneratedValue(strategy="AUTO")
+     * @ORM\Column(type="integer", name="id")
+     */
+    protected $id;
+    
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="date", type="datetime")
+     */
+    private $date; 
+    
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="name", type="string", length=64, nullable=true)
+     */
+    private $name;     
+    
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="email", type="string", length=64, nullable=true)
+     */
+    private $email;     
+    
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="message", type="text", nullable=true)
+     */
+    private $message;     
+
+
+    public function __toString()
+    {
+        return (string) $this->getName();
+    } 
+
+
+}

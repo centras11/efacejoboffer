@@ -1,0 +1,15 @@
+{% extends 'EfaceContactBundle:Page:baseSite.html.twig' %}
+
+{% block content %}
+
+    {% for flashMessage in app.session.flashbag.get('success') %}
+      <p class="success">{{ flashMessage }}</p>
+    {% endfor %}
+
+    <form action="{{ path('EfaceContactBundle_contact') }}" method="post" {{ form_enctype(form) }} novalidate>
+        {{ form_widget(form) }}
+
+        <input type="submit" />
+    </form>
+      
+{% endblock %} 

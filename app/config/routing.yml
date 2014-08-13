@@ -1,0 +1,5 @@
+eface_contact:
+    resource: "@EfaceContactBundle/Controller/"
+    type:     annotation
+    prefix:   /
+    

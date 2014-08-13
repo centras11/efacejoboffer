@@ -1,0 +1,8 @@
+parameters:
+    # Admin email address
+    eface_contact.admin_email: centras11@gmail.com
+
+services:
+#    eface_contact.example:
+#        class: %eface_contact.example.class%
+#        arguments: [@service_id, "plain_value", %parameter%]

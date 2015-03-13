@@ -1,6 +1,6 @@
 <?php
 
-namespace Eface\ContactBundle\Entity\Repository;
+namespace Eface\ContactBundle\Repository;
 
 use Doctrine\ORM\EntityRepository;
 

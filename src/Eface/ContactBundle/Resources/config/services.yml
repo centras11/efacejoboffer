@@ -1,8 +1,9 @@
 parameters:
-    # Admin email address
     eface_contact.admin_email: centras11@gmail.com
+    eface_contact.service.contact.class: Eface\ContactBundle\Service\ContactManager
 
 services:
-#    eface_contact.example:
-#        class: %eface_contact.example.class%
-#        arguments: [@service_id, "plain_value", %parameter%]
+    eface.service.contact_manager:
+        class: %eface_contact.service.contact.class%
+        arguments: ["@doctrine", "@mailer"]
+

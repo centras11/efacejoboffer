@@ -8,10 +8,10 @@ use Symfony\Component\Validator\Constraints as Assert;
 
 /**
  * Contact entity
- * 
+ *
  * @ORM\Entity()
  * @ORM\Table(name="eface_contact")
- * @ORM\Entity(repositoryClass="Eface\ContactBundle\Entity\Repository\ContactRepository")
+ * @ORM\Entity(repositoryClass="Eface\ContactBundle\Repository\ContactRepository")
  * @ORM\HasLifecycleCallbacks()
  */
 class Contact
@@ -23,14 +23,14 @@ class Contact
      * @ORM\Column(type="integer", name="id")
      */
     protected $id;
-    
+
     /**
      * @var string
      *
      * @ORM\Column(name="date", type="datetime")
      */
-    private $date; 
-    
+    private $date;
+
     /**
      * @var string
      *
@@ -39,34 +39,34 @@ class Contact
      *     message = "Please provide your Name.",
      * )
      */
-    private $name;     
-    
+    private $name;
+
     /**
      * @var string
      *
      * @ORM\Column(name="email", type="string", length=64, nullable=true)
      * @Assert\NotBlank(
      *     message = "Please provide your Email.",
-     * )     
+     * )
      * @Assert\Email(
      *     message = "The email '{{ value }}' is not a valid email.",
      *     checkMX = true
-     * )     
+     * )
      */
-    private $email;     
-    
+    private $email;
+
     /**
      * @var string
      *
      * @ORM\Column(name="message", type="text", nullable=true)
      * @Assert\NotBlank()
      */
-    private $message;     
+    private $message;
 
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -77,7 +77,7 @@ class Contact
      * Set date
      *
      * @param \DateTime $date
-     * 
+     *
      * @return Contact
      */
     public function setDate($date)
@@ -90,7 +90,7 @@ class Contact
     /**
      * Get date
      *
-     * @return \DateTime 
+     * @return \DateTime
      */
     public function getDate()
     {
@@ -101,7 +101,7 @@ class Contact
      * Set name
      *
      * @param string $name
-     * 
+     *
      * @return Contact
      */
     public function setName($name)
@@ -114,7 +114,7 @@ class Contact
     /**
      * Get name
      *
-     * @return string 
+     * @return string
      */
     public function getName()
     {
@@ -125,7 +125,7 @@ class Contact
      * Set email
      *
      * @param string $email
-     * 
+     *
      * @return Contact
      */
     public function setEmail($email)
@@ -138,7 +138,7 @@ class Contact
     /**
      * Get email
      *
-     * @return string 
+     * @return string
      */
     public function getEmail()
     {
@@ -149,7 +149,7 @@ class Contact
      * Set message
      *
      * @param string $message
-     * 
+     *
      * @return Contact
      */
     public function setMessage($message)
@@ -162,13 +162,13 @@ class Contact
     /**
      * Get message
      *
-     * @return string 
+     * @return string
      */
     public function getMessage()
     {
         return $this->message;
     }
-    
+
     /**
      * @ORM\PrePersist
      */
@@ -177,5 +177,5 @@ class Contact
         if (!$this->getDate()) {
           $this->date = new \DateTime();
         }
-    }    
+    }
 }
